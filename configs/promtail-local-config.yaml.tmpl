@@ -1,0 +1,25 @@
+server:
+  http_listen_port: 0
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://{{ .Env.LOKI_REMOTE_HOST }}/loki/api/v1/push
+
+scrape_configs:
+- job_name: neutron-node-1-job
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: neutron-node-1
+      __path__: /opt/neutron/data/test-1.log
+- job_name: neutron-node-2-job
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: neutron-node-2
+      __path__: /opt/neutron/data/test-2.log

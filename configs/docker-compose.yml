@@ -1,0 +1,45 @@
+version: '3'
+networks:
+  mon:
+services:
+  loki:
+    image: grafana/loki
+    volumes:
+      - /opt/monitoring/loki:/etc/loki
+    ports:
+      - "3100:3100"
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+    networks:
+      - mon
+    user: "0"
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana:/var/lib/grafana
+    restart: unless-stopped
+    user: "0"
+    ports:
+      - "3333:3000"
+    networks:
+      - mon
+  prometeus:
+    image: prom/prometheus:v2.38.0
+    volumes: 
+      - ./prometeus:/etc/prometeus
+    command: --config.file=/etc/prometeus/prometeus.yml
+    user: "0"
+    ports: 
+      - "9191:9090"
+    networks:
+      - mon
+  alertmanager:
+    image: prom/alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+    command: --config.file=/etc/alertmanager/alertmanager.yml
+    networks:
+      - mon
+    user: "0"
