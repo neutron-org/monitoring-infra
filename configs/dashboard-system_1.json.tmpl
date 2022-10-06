@@ -33,8 +33,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -47,8 +46,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -58,8 +56,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Busy state of all CPU cores together",
       "fieldConfig": {
@@ -126,8 +123,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "(((count(count(node_cpu_seconds_total{instance=~\"$node:.*\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:.*\"}[5m])))) * 100) / count(count(node_cpu_seconds_total{instance=~\"$node:.*\"}) by (cpu))",
@@ -144,8 +140,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Used RAM Memory without swap and cache",
       "fieldConfig": {
@@ -213,8 +208,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "((node_memory_MemTotal_bytes{instance=~\"$node:.*\"} - node_memory_MemFree_bytes{instance=~\"$node:.*\"} - node_memory_Cached_bytes{instance=~\"$node:.*\"}) / (node_memory_MemTotal_bytes{instance=~\"$node:.*\"} )) * 100",
@@ -229,8 +223,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Used Swap",
       "fieldConfig": {
@@ -297,8 +290,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "((node_memory_SwapTotal_bytes{instance=~\"$node:.*\"} - node_memory_SwapFree_bytes{instance=~\"$node:.*\"}) / (node_memory_SwapTotal_bytes{instance=~\"$node:.*\"} )) * 100",
@@ -313,8 +305,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Busy state of all CPU cores together (1 min average)",
       "fieldConfig": {
@@ -381,8 +372,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "avg(node_load1{instance=~\"$node:.*\"}) /  count(count(node_cpu_seconds_total{instance=~\"$node:.*\"}) by (cpu)) * 100",
@@ -426,8 +416,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Basic network info per interface.",
       "fill": 3,
@@ -479,8 +468,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:.*\"}[5m])",
@@ -492,8 +480,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -536,8 +523,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -550,8 +536,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -561,8 +546,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Total number of CPU cores",
       "fieldConfig": {
@@ -625,8 +609,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "count(count(node_cpu_seconds_total{instance=~\"$node:.*\"}) by (cpu))",
@@ -641,8 +624,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Total RAM",
       "fieldConfig": {
@@ -706,8 +688,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"}",
@@ -722,8 +703,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Total SWAP",
       "fieldConfig": {
@@ -787,8 +767,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_SwapTotal_bytes{instance=~\"$node:.*\"}",
@@ -803,8 +782,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "System Load (1m avg)",
       "fieldConfig": {
@@ -868,8 +846,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_load1{instance=~\"$node:.*\"}",
           "hide": false,
@@ -883,8 +860,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "System uptime",
       "fieldConfig": {
@@ -949,8 +925,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_time_seconds{instance=~\"$node:.*\"} - node_boot_time_seconds{instance=~\"$node:.*\"}",
@@ -965,8 +940,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Used RootFS",
       "fieldConfig": {
@@ -1033,8 +1007,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "((node_filesystem_size_bytes{device=~\"rootfs\",instance=~\"$node:.*\"} - node_filesystem_free_bytes{device=~\"rootfs\",instance=~\"$node:.*\"}) * 100 ) / (node_filesystem_size_bytes{device=~\"rootfs\",instance=~\"$node:.*\"})",
@@ -1051,8 +1024,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -1065,8 +1037,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -1093,8 +1064,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 2,
       "description": "Basic CPU info",
@@ -1140,8 +1110,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum ( irate(node_cpu_seconds_total{mode!='idle',instance=~\"$node:.*\"}[5m]))",
@@ -1153,8 +1122,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:.*\"}[5m]))",
@@ -1224,8 +1192,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 2,
       "description": "Basic memory usage",
@@ -1276,8 +1243,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"}",
@@ -1290,8 +1256,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"} - node_memory_MemFree_bytes{instance=~\"$node:.*\"} - node_memory_Cached_bytes{instance=~\"$node:.*\"} - node_memory_Buffers_bytes{instance=~\"$node:.*\"} - node_memory_Slab_bytes{instance=~\"$node:.*\"}",
@@ -1304,8 +1269,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "(node_memory_SwapTotal_bytes{instance=~\"$node:.*\"} - node_memory_SwapFree_bytes{instance=~\"$node:.*\"})",
@@ -1351,8 +1315,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -1365,8 +1328,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -1393,8 +1355,7 @@
         }
       ],
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Local filesystem usage",
       "fontSize": "80%",
@@ -1440,8 +1401,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "{instance=~\"$node:.*\", fstype=~\"xfs|ext4\", instance=~\"$node:.*\", fstype=~\"xfs|ext4\"}",
           "range": true,
@@ -1461,8 +1421,7 @@
         }
       ],
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Local filesystem sIze info",
       "fontSize": "80%",
@@ -1504,8 +1463,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "{instance=~\"$node:.*\", fstype=~\"xfs|ext4\"}",
           "range": true,
@@ -1519,8 +1477,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -1533,8 +1490,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -1559,8 +1515,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 2,
       "description": "CPU info",
@@ -1606,8 +1561,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode=\"system\",instance=~\"$node:.*\"}[5m]))",
@@ -1620,8 +1574,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='user',instance=~\"$node:.*\"}[5m]))",
@@ -1633,8 +1586,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='nice',instance=~\"$node:.*\"}[5m]))",
@@ -1646,8 +1598,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "sum by (mode)(irate(node_cpu_seconds_total{mode='idle',instance=~\"$node:.*\"}[5m]))",
@@ -1659,8 +1610,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "sum by (mode)(irate(node_cpu{mode='iowait',instance=~\"$node:.*\"}[5m]))",
           "intervalFactor": 2,
@@ -1670,8 +1620,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "sum by (mode)(irate(node_cpu{mode='irq',instance=~\"$node:.*\"}[5m]))",
           "intervalFactor": 2,
@@ -1681,8 +1630,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "sum by (mode)(irate(node_cpu{mode='softirq',instance=~\"$node:.*\"}[5m]))",
           "intervalFactor": 2,
@@ -1692,8 +1640,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "sum by (mode)(irate(node_cpu{mode='steal',instance=~\"$node:.*\"}[5m]))",
           "intervalFactor": 2,
@@ -1703,8 +1650,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "sum by (mode)(irate(node_cpu{mode='guest',instance=~\"$node:.*\"}[5m]))",
           "intervalFactor": 2,
@@ -1772,8 +1718,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 2,
       "description": "Memory Stack",
@@ -1856,8 +1801,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"} - node_memory_MemFree_bytes{instance=~\"$node:.*\"} - node_memory_Buffers_bytes{instance=~\"$node:.*\"} - node_memory_Cached_bytes{instance=~\"$node:.*\"} - node_memory_Slab_bytes{instance=~\"$node:.*\"} - node_memory_PageTables_bytes{instance=~\"$node:.*\"} - node_memory_SwapCached_bytes{instance=~\"$node:.*\"}",
@@ -1870,8 +1814,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_PageTables{instance=~\"$node:.*\"}",
           "hide": false,
@@ -1882,8 +1825,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_SwapCached{instance=~\"$node:.*\"}",
           "intervalFactor": 2,
@@ -1893,8 +1835,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Slab{instance=~\"$node:.*\"}",
           "hide": false,
@@ -1905,8 +1846,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Cached{instance=~\"$node:.*\"}",
           "hide": false,
@@ -1917,8 +1857,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Buffers{instance=~\"$node:.*\"}",
           "hide": false,
@@ -1929,8 +1868,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_MemFree{instance=~\"$node:.*\"}",
           "hide": false,
@@ -1941,8 +1879,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "(node_memory_SwapTotal{instance=~\"$node:.*\"} - node_memory_SwapFree{instance=~\"$node:.*\"})",
           "hide": false,
@@ -1953,8 +1890,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Committed_AS{instance=~\"$node:.*\"}",
           "hide": true,
@@ -1965,8 +1901,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Mapped{instance=~\"$node:.*\"}",
           "hide": true,
@@ -1977,8 +1912,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Active{instance=~\"$node:.*\"}",
           "hide": true,
@@ -1989,8 +1923,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Inactive{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2001,8 +1934,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_VmallocUsed{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2013,8 +1945,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_CommitLimit{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2025,8 +1956,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Dirty{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2037,8 +1967,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_HardwareCorrupted{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2049,8 +1978,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_memory_Unevictable{instance=~\"$node:.*\"}",
           "hide": true,
@@ -2122,8 +2050,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Network info. Need to fix https://github.com/grafana/grafana/issues/1271",
       "fill": 3,
@@ -2187,8 +2114,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_network_receive_bytes_total{instance=~\"$node:.*\"}[5m])",
@@ -2200,8 +2126,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_transmit_bytes{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -2211,8 +2136,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_receive_errs{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -2222,8 +2146,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_transmit_errs{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -2233,8 +2156,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_receive_drop{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -2244,8 +2166,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_network_transmit_drop{instance=~\"$node:.*\"}[5m])",
           "intervalFactor": 2,
@@ -2293,8 +2214,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 3,
       "description": "Need to fix https://github.com/grafana/grafana/issues/1271",
@@ -2348,8 +2268,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:.*\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -2362,8 +2281,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:.*\",device=~\"[a-z]*[a-z]\"}[5m])",
@@ -2376,8 +2294,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_disk_io_time_seconds_total{instance=~\"$node:.*\",device=~\"[a-z]*[a-z]\"} [5m])",
@@ -2426,8 +2343,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 3,
       "description": "Disk space used of all filesystems mounted",
@@ -2475,8 +2391,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "100- ((node_filesystem_avail_bytes{instance=~\"$node:.*\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=~\"$node:.*\",device!~'rootfs'})",
@@ -2522,8 +2437,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -2557,8 +2471,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "decimals": 2,
           "fill": 1,
@@ -2640,8 +2553,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Committed_AS_bytes{instance=~\"$node:.*\"}",
@@ -2653,8 +2565,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Mapped{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2664,8 +2575,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Active{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2675,8 +2585,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Inactive{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2686,8 +2595,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_VmallocUsed{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2697,8 +2605,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_CommitLimit{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2708,8 +2615,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Dirty{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2719,8 +2625,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_HardwareCorrupted{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2730,8 +2635,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Unevictable{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -2798,8 +2702,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "decimals": 2,
           "fill": 1,
@@ -2843,8 +2746,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"}",
@@ -2857,8 +2759,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"} + (node_memory_SwapTotal_bytes{instance=~\"$node:.*\"})",
@@ -2871,8 +2772,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Shmem_bytes{instance=~\"$node:.*\"}",
@@ -2884,8 +2784,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Writeback_bytes{instance=~\"$node:.*\"}",
@@ -2897,8 +2796,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_WritebackTmp_bytes{instance=~\"$node:.*\"}",
@@ -2910,8 +2808,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_NFS_Unstable_bytes{instance=~\"$node:.*\"}",
@@ -2923,8 +2820,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Mlocked_bytes{instance=~\"$node:.*\"}",
@@ -2936,8 +2832,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_SReclaimable_bytes{instance=~\"$node:.*\"}",
@@ -2949,8 +2844,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_SUnreclaim_bytes{instance=~\"$node:.*\"}",
@@ -3017,8 +2911,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "decimals": 2,
           "fill": 1,
@@ -3062,8 +2955,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"}",
@@ -3076,8 +2968,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_MemTotal_bytes{instance=~\"$node:.*\"} + (node_memory_SwapTotal{instance=~\"$node:.*\"})",
@@ -3090,8 +2981,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_DirectMap1G_bytes{instance=~\"$node:.*\"}",
@@ -3103,8 +2993,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_DirectMap2M{instance=~\"$node:.*\"}",
               "interval": "",
@@ -3115,8 +3004,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_DirectMap4k_bytes{instance=~\"$node:.*\"}",
@@ -3129,8 +3017,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_AnonHugePages_bytes{instance=~\"$node:.*\"}",
@@ -3142,8 +3029,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_AnonPages_bytes{instance=~\"$node:.*\"}",
@@ -3155,8 +3041,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Active_anon_bytes{instance=~\"$node:.*\"}",
@@ -3168,8 +3053,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Active_file_bytes{instance=~\"$node:.*\"}",
@@ -3181,8 +3065,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_Inactive_file_bytes{instance=~\"$node:.*\"}",
@@ -3249,8 +3132,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "decimals": 2,
           "fill": 1,
@@ -3294,8 +3176,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_VmallocChunk_bytes{instance=~\"$node:.*\"}",
@@ -3308,8 +3189,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_VmallocTotal_bytes{instance=~\"$node:.*\"}",
@@ -3322,8 +3202,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_VmallocUsed_bytes{instance=~\"$node:.*\"}",
@@ -3372,8 +3251,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -3421,8 +3299,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_vmstat_pswpin {instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
@@ -3432,8 +3309,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_vmstat_pswpout{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
@@ -3498,8 +3374,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "decimals": 2,
           "fill": 1,
@@ -3548,8 +3423,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_HugePages_Free{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3559,8 +3433,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_HugePages_Rsvd{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3570,8 +3443,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_HugePages_Surp{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3581,8 +3453,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_HugePages_Total{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3592,8 +3463,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_memory_Hugepagesize{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3638,8 +3508,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -3650,8 +3519,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -3667,8 +3535,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -3710,8 +3577,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_context_switches{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
@@ -3721,8 +3587,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_intr{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 2,
@@ -3732,8 +3597,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_entropy_available_bits{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3778,8 +3642,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -3820,8 +3683,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "process_max_fds{instance=~\"$node:.*\"}",
               "interval": "",
@@ -3832,8 +3694,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "process_open_fds{instance=~\"$node:.*\"}",
               "interval": "",
@@ -3879,8 +3740,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -3926,8 +3786,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_procs_blocked{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3937,8 +3796,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_procs_running{instance=~\"$node:.*\"}",
               "intervalFactor": 2,
@@ -3948,8 +3806,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "increase(node_forks{instance=~\"$node:.*\"}[5m])",
               "hide": false,
@@ -3996,8 +3853,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -4037,8 +3893,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "process_resident_memory_bytes{instance=~\"$node:.*\"}",
               "interval": "",
@@ -4049,8 +3904,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "process_start_time_seconds{instance=~\"$node:.*\"}",
               "interval": "",
@@ -4061,8 +3915,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "process_virtual_memory_bytes{instance=~\"$node:.*\"}",
               "interval": "",
@@ -4108,8 +3961,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -4151,8 +4003,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_load1{instance=~\"$node:.*\"}",
               "intervalFactor": 4,
@@ -4162,8 +4013,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_load5{instance=~\"$node:.*\"}",
               "intervalFactor": 4,
@@ -4173,8 +4023,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_load15{instance=~\"$node:.*\"}",
               "intervalFactor": 4,
@@ -4218,8 +4067,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -4230,8 +4078,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -4247,8 +4094,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The total number of bytes read / write successfully.",
           "fill": 2,
@@ -4298,8 +4144,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_read_bytes_total{instance=~\"$node:.*\"}[5m])",
@@ -4311,8 +4156,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_written_bytes_total{instance=~\"$node:.*\"}[5m])",
@@ -4360,8 +4204,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The total number of reads / writes completed successfully.",
           "fill": 2,
@@ -4411,8 +4254,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:.*\"}[5m])",
@@ -4424,8 +4266,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:.*\"}[5m])",
@@ -4473,8 +4314,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The weighted # of milliseconds spent doing I/Os. This field is incremented at each I/O start, I/O completion, I/O  merge, or read of these stats by the number of I/Os in progress times the number of milliseconds spent doing I/O since the last update of this field. This can provide an easy measure of both I/O completion time and the backlog that may be accumulating.",
           "fill": 3,
@@ -4521,8 +4361,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_io_time_weighted_seconds_total{instance=~\"$node:.*\"}[5m])",
@@ -4571,8 +4410,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The total number of milliseconds spent by all reads / writes.",
           "fill": 3,
@@ -4624,8 +4462,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_read_time_seconds_total{instance=~\"$node:.*\"}[5m])",
@@ -4638,8 +4475,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_write_time_seconds_total{instance=~\"$node:.*\"}[5m])",
@@ -4688,8 +4524,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The number of I/Os currently in progress.",
           "fill": 3,
@@ -4736,8 +4571,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_disk_io_now{instance=~\"$node:.*\"}[5m])",
               "intervalFactor": 4,
@@ -4784,8 +4618,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "The total number of reads / writes completed successfully and the number of reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.",
           "fill": 2,
@@ -4841,8 +4674,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_reads_completed_total{instance=~\"$node:.*\"}[5m])",
@@ -4855,8 +4687,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_writes_completed_total{instance=~\"$node:.*\"}[5m])",
@@ -4869,8 +4700,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_reads_merged_total{instance=~\"$node:.*\"}[5m])",
@@ -4882,8 +4712,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_writes_merged_total{instance=~\"$node:.*\"}[5m])",
@@ -4931,8 +4760,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "Milliseconds spent doing I/Os.",
           "fill": 3,
@@ -4979,8 +4807,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "irate(node_disk_io_time_seconds_total{instance=~\"$node:.*\"}[5m])",
@@ -5029,8 +4856,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "description": "1 if there was an error opening or reading a file, 0 otherwise",
           "fill": 2,
@@ -5074,8 +4900,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_textfile_scrape_error{instance=~\"$node:.*\"}",
@@ -5122,8 +4947,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -5134,8 +4958,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -5148,8 +4971,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -5163,8 +4985,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 3,
       "description": "Filesystem space available to non-root users in bytes. Filesystem free space in bytes. Filesystem read-only status. Filesystem size in bytes.",
@@ -5209,8 +5030,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_filesystem_avail_bytes{instance=~\"$node:.*\",device!~'rootfs'}",
@@ -5224,8 +5044,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filesystem_free{instance=~\"$node:.*\",device!~'rootfs'}",
           "hide": true,
@@ -5236,8 +5055,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filesystem_size{instance=~\"$node:.*\",device!~'rootfs'}",
           "hide": true,
@@ -5284,8 +5102,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "Filesystem total file nodes.",
       "fill": 1,
@@ -5329,8 +5146,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filesystem_files{instance=~\"$node:.*\"}",
           "intervalFactor": 2,
@@ -5375,8 +5191,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "description": "File descriptor statistics: allocated.",
       "fill": 1,
@@ -5418,8 +5233,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filefd_maximum{instance=~\"$node:.*\"}",
           "intervalFactor": 4,
@@ -5429,8 +5243,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filefd_allocated{instance=~\"$node:.*\"}",
           "intervalFactor": 2,
@@ -5478,8 +5291,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "decimals": 0,
       "description": "Filesystem read-only status.",
@@ -5526,8 +5338,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "node_filesystem_readonly{instance=~\"$node:.*\",device!~'rootfs'}",
           "intervalFactor": 2,
@@ -5572,8 +5383,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -5587,8 +5397,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -5630,8 +5439,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_bytes{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5641,8 +5449,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_bytes{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5652,8 +5459,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_compressed{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5663,8 +5469,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_compressed{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5674,8 +5479,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_errs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5685,8 +5489,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_errs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5696,8 +5499,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_drop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5707,8 +5509,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_drop{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5718,8 +5519,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_fifo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5729,8 +5529,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_fifo{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5740,8 +5539,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_frame{instance=~\"$node.*\"}[5m])",
               "hide": true,
@@ -5752,8 +5550,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_frame{instance=~\"$node.*\"}[5m])",
               "hide": true,
@@ -5764,8 +5561,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_multicast{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5775,8 +5571,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_multicast{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5815,8 +5610,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -5856,8 +5650,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_receive_packets{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5867,8 +5660,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_network_transmit_packets{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -5907,8 +5699,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -5943,8 +5734,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_nf_conntrack_entries{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -5954,8 +5744,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_nf_conntrack_entries{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -5996,8 +5785,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -6008,8 +5796,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -6023,8 +5810,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -6057,8 +5843,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_netstat_Tcp_CurrEstab{instance=~\"$node..*\"}",
               "intervalFactor": 2,
@@ -6097,8 +5882,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -6143,8 +5927,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InReceives{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6154,8 +5937,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_DefaultTTL{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6165,8 +5947,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InDelivers{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6176,8 +5957,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InDiscards{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6187,8 +5967,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InHdrErrors{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6198,8 +5977,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InReceives{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6209,8 +5987,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_InUnknownProtos{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6220,8 +5997,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_OutDiscards{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6231,8 +6007,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_OutNoRoutes{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6242,8 +6017,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_OutRequests{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6283,8 +6057,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -6330,8 +6103,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InBcastOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6341,8 +6113,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InBcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6352,8 +6123,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InCEPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6363,8 +6133,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InCsumErrors{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6374,8 +6143,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InECT0Pkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6385,8 +6153,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InECT1Pkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6396,8 +6163,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InMcastOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6407,8 +6173,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InMcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6418,8 +6183,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InNoECTPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6429,8 +6193,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InNoRoutes{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6440,8 +6203,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6451,8 +6213,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_InTruncatedPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6462,8 +6223,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_OutBcastOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6473,8 +6233,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_OutBcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6484,8 +6243,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_OutMcastOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6495,8 +6253,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_OutMcastPkts{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6506,8 +6263,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IpExt_OutOctets{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6547,8 +6303,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -6588,8 +6343,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_DefaultTTL{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6599,8 +6353,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_ForwDatagrams{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6610,8 +6363,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_Forwarding{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6621,8 +6373,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_FragCreates{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6632,8 +6383,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_FragFails{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6643,8 +6393,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_FragOKs{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6654,8 +6403,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_ReasmFails{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6665,8 +6413,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_ReasmOKs{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6676,8 +6423,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_ReasmReqds{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6687,8 +6433,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Ip_ReasmTimeout{instance=~\"$node..*\"}[5m])",
               "intervalFactor": 2,
@@ -6728,8 +6473,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "gridPos": {
@@ -6762,8 +6506,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_FRAG_inuse{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6773,8 +6516,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_FRAG_memory{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6784,8 +6526,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_RAW_inuse{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6795,8 +6536,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_alloc{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6806,8 +6546,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_inuse{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6817,8 +6556,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_mem{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6828,8 +6566,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_mem_bytes{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6839,8 +6576,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_orphan{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6850,8 +6586,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_TCP_tw{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6861,8 +6596,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_UDPLITE_inuse{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6872,8 +6606,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_UDP_inuse{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6883,8 +6616,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_UDP_mem{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6894,8 +6626,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_UDP_mem_bytes{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6905,8 +6636,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "node_sockstat_sockets_used{instance=~\"$node.*\"}",
               "intervalFactor": 2,
@@ -6946,8 +6676,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -6958,8 +6687,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -6972,8 +6700,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -6987,8 +6714,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -7040,8 +6766,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_InCsumErrors{instance=~\"$node.*\"}[5m])",
           "hide": false,
@@ -7052,8 +6777,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_InErrs{instance=~\"$node.*\"}[5m])",
           "hide": false,
@@ -7064,8 +6788,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_InSegs{instance=~\"$node.*\"}[5m])",
           "hide": false,
@@ -7076,8 +6799,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_OutRsts{instance=~\"$node.*\"}[5m])",
           "hide": false,
@@ -7088,8 +6810,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_OutSegs{instance=~\"$node.*\"}[5m])",
           "hide": false,
@@ -7136,8 +6857,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -7184,8 +6904,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_ActiveOpens{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7195,8 +6914,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_AttemptFails{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7206,8 +6924,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_CurrEstab{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7217,8 +6934,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_EstabResets{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7228,8 +6944,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_MaxConn{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7239,8 +6954,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_PassiveOpens{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7250,8 +6964,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_RetransSegs{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7261,8 +6974,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_RtoAlgorithm{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7272,8 +6984,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_RtoMax{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7283,8 +6994,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_Tcp_RtoMin{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7330,8 +7040,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -7378,8 +7087,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_ArpFilter{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7389,8 +7097,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_BusyPollRxPackets{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7400,8 +7107,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_DelayedACKLocked{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7411,8 +7117,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_DelayedACKLost{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7422,8 +7127,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_DelayedACKs{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7433,8 +7137,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_EmbryonicRsts{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7444,8 +7147,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_IPReversePathFilter{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7455,8 +7157,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_ListenDrops{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7466,8 +7167,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_ListenOverflows{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7477,8 +7177,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_LockDroppedIcmps{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7488,8 +7187,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_OfoPruned{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7499,8 +7197,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_OutOfWindowIcmps{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7510,8 +7207,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_PAWSActive{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7521,8 +7217,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_PAWSEstab{instance=~'$node'}[5m])",
           "intervalFactor": 2,
@@ -7532,8 +7227,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_PAWSPassive{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7543,8 +7237,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_PruneCalled{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7554,8 +7247,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_RcvPruned{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7565,8 +7257,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_SyncookiesFailed{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7576,8 +7267,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_SyncookiesRecv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7587,8 +7277,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_SyncookiesSent{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7598,8 +7287,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAbortFailed{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7608,8 +7296,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAbortOnClose{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7619,8 +7306,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAbortOnData{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7630,8 +7316,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAbortOnLinger{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7641,8 +7326,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAbortOnMemory{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7688,8 +7372,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -7736,8 +7419,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "editorMode": "code",
           "expr": "irate(node_netstat_TcpExt_TCPTimeouts{instance=~\"$node.*\"}[5m])",
@@ -7749,8 +7431,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPAutoCorking{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7760,8 +7441,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPBacklogDrop{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7771,8 +7451,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPChallengeACK{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7782,8 +7461,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKIgnoredNoUndo{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7793,8 +7471,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKIgnoredOld{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7804,8 +7481,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoRecv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7815,8 +7491,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKOfoSent{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7826,8 +7501,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKOldSent{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7837,8 +7511,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKRecv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7848,8 +7521,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDSACKUndo{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7859,8 +7531,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDeferAcceptDrop{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7870,8 +7541,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDirectCopyFromBacklog{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7881,8 +7551,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPDirectCopyFromPrequeue{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7892,8 +7561,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFACKReorder{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7903,8 +7571,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenActive{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7914,8 +7581,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenActiveFail{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7925,8 +7591,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenCookieReqd{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7936,8 +7601,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenListenOverflow{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7947,8 +7611,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassive{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7958,8 +7621,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastOpenPassiveFail{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7969,8 +7631,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFastRetrans{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7980,8 +7641,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPForwardRetrans{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -7991,8 +7651,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFromZeroWindowAdv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8002,8 +7661,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPFullUndo{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8013,8 +7671,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPHPAcks{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8024,8 +7681,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPHPHits{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8035,8 +7691,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPHPHitsToUser{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8046,8 +7701,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPLossFailures{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8057,8 +7711,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPLossProbeRecovery{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8104,8 +7757,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "EY9aNvM4z"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -8152,8 +7804,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSackRecovery{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8163,8 +7814,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSackRecoveryFail{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8174,8 +7824,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSackShiftFallback{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8185,8 +7834,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSackShifted{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8196,8 +7844,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSchedulerFailed{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8207,8 +7854,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSlowStartRetrans{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8218,8 +7864,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSpuriousRTOs{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8229,8 +7874,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSpuriousRtxHostQueues{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8240,8 +7884,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPSynRetrans{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8251,8 +7894,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPTSReorder{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8262,8 +7904,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPTimeWaitOverflow{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8273,8 +7914,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPTimeouts{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8284,8 +7924,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPToZeroWindowAdv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8295,8 +7934,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TCPWantZeroWindowAdv{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8306,8 +7944,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TW{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8317,8 +7954,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TWKilled{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8328,8 +7964,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "expr": "irate(node_netstat_TcpExt_TWRecycled{instance=~\"$node.*\"}[5m])",
           "intervalFactor": 2,
@@ -8372,8 +8007,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "type": "loki",
-        "uid": "ZthxomGVk"
+        "type": "loki"
       },
       "gridPos": {
         "h": 1,
@@ -8389,8 +8023,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -8446,8 +8079,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_InCsumErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8457,8 +8089,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_InDatagrams{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8468,8 +8099,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_InErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8479,8 +8109,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_NoPorts{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8490,8 +8119,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_OutDatagrams{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8501,8 +8129,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_RcvbufErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8512,8 +8139,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Udp_SndbufErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8559,8 +8185,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -8612,8 +8237,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_InCsumErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8623,8 +8247,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_InDatagrams{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8634,8 +8257,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_InErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8645,8 +8267,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_NoPorts{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8656,8 +8277,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_OutDatagrams{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8667,8 +8287,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_RcvbufErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8678,8 +8297,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_UdpLite_SndbufErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8725,8 +8343,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": {
-            "type": "prometheus",
-            "uid": "EY9aNvM4z"
+            "type": "prometheus"
           },
           "fill": 1,
           "fillGradient": 0,
@@ -8778,8 +8395,7 @@
           "targets": [
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IcmpMsg_InType3{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8789,8 +8405,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_IcmpMsg_OutType3{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8800,8 +8415,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InAddrMaskReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8811,8 +8425,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InAddrMasks{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8822,8 +8435,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InCsumErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8833,8 +8445,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InDestUnreachs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8844,8 +8455,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InEchoReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8855,8 +8465,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InEchos{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8866,8 +8475,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8877,8 +8485,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InMsgs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8888,8 +8495,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InParmProbs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8899,8 +8505,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InRedirects{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8910,8 +8515,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InSrcQuenchs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8921,8 +8525,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InTimeExcds{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8932,8 +8535,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InTimestampReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8943,8 +8545,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_InTimestamps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8954,8 +8555,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutAddrMaskReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8965,8 +8565,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutAddrMasks{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8976,8 +8575,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutDestUnreachs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8987,8 +8585,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutEchoReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -8998,8 +8595,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutEchos{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9009,8 +8605,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutErrors{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9020,8 +8615,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutMsgs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9031,8 +8625,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutParmProbs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9042,8 +8635,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutRedirects{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9053,8 +8645,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutSrcQuenchs{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9064,8 +8655,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutTimeExcds{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9075,8 +8665,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutTimestampReps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9086,8 +8675,7 @@
             },
             {
               "datasource": {
-                "type": "prometheus",
-                "uid": "EY9aNvM4z"
+                "type": "prometheus"
               },
               "expr": "irate(node_netstat_Icmp_OutTimestamps{instance=~\"$node.*\"}[5m])",
               "intervalFactor": 2,
@@ -9131,8 +8719,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "ZthxomGVk"
+            "type": "loki"
           },
           "refId": "A"
         }
@@ -9151,7 +8738,7 @@
         "hide": 2,
         "label": "Host:",
         "name": "node",
-        "query": "{{ .Env.NEUTRON_HOST }}",
+        "query": "{{ .Env.NEUTRON_HOST1 }}",
         "skipUrlSync": false,
         "type": "constant"
       }

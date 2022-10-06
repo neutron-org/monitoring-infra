@@ -16,10 +16,3 @@ scrape_configs:
     labels:
       job: neutron-node-1
       __path__: /opt/neutron/data/test-1.log
-- job_name: neutron-node-2-job
-  static_configs:
-  - targets:
-      - localhost
-    labels:
-      job: neutron-node-2
-      __path__: /opt/neutron/data/test-2.log
