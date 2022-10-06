@@ -1,0 +1,34 @@
+groups:
+- name: NeutronStuff
+  rules: 
+  - alert: ResMemMoreThan2gb
+    expr: process_resident_memory_bytes{job="neutron"} / 1024 / 1024 > 2000
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Neutron instance {{ $labels.instance }} res memory high"
+      description: "{{ $labels.instance }} res memory high: {{ $value }}"
+      priority: P1
+  - alert: ResMemPeak
+    expr: process_resident_memory_bytes{job="neutron"}/avg_over_time(process_resident_memory_bytes{job="neutron"}[10m]) > 1.3
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Neutron instance {{ $labels.instance }} res memory peak"
+      description: "{{ $labels.instance }} res memory peak: {{ $value }}"
+      priority: P1
+  - alert: FewBlocksProduced
+    expr: tendermint_consensus_latest_block_height-tendermint_consensus_latest_block_height offset 60s < 10
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Neutron instance {{ $labels.instance }} low blocks produced for 1min"
+      description: "{{ $labels.instance }} low blocks produced for 1min: {{ $value }}"
+      priority: P1
+  

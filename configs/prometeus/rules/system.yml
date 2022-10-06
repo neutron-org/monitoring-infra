@@ -1,0 +1,43 @@
+groups:
+- name: SystemStuff
+  rules: 
+  - alert: NodeSystemOverloaded
+    expr: node_load5 > 5
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Instance {{ $labels.instance }} overloaded"
+      description: "{{ $labels.instance }} overloaded LA: {{ $value }}"
+      priority: P1
+  - alert: LowMemory
+    expr: ((node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes) * 100 > 90
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Instance {{ $labels.instance }} low memory"
+      description: "{{ $labels.instance }} Low Memory: {{ $value }}"
+      priority: P1
+  - alert: WarningMemory
+    expr: ((node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes) * 100 > 70
+    for: 1m
+    labels:
+      severity: moderate
+    annotations:
+      service: neutron-test
+      summary: "Instance {{ $labels.instance }} warning memory"
+      description: "{{ $labels.instance }} Low Memory: {{ $value }}"
+      priority: P2
+  - alert: LowSpace
+    expr: (1-(node_filesystem_free_bytes{mountpoint="/"} /  node_filesystem_size_bytes{mountpoint="/"}))*100 > 90
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Instance {{ $labels.instance }} low space"
+      description: "{{ $labels.instance }} Low Space: {{ $value }}"
+      priority: P1

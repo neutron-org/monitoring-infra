@@ -1,0 +1,14 @@
+groups:
+  - name: rate-alerting
+    rules:
+      - alert: Error in logs
+        expr: |
+          sum by(message, ip_address, message) (rate({appname="neutrond"} | json | level = "error" [2m]))
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          title: "Error detected in logs"
+          description: "Error detected in logs {{ $labels.ip_address }} {{ $labels.err }} {{ $labels.message }}"
+          priority: P1
+          service: neutron-test
