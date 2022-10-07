@@ -5,10 +5,10 @@ route:
   repeat_interval: 1h
   receiver: Telegram
   routes:
-    - receiver: OpsGenie_notifications
-      matchers:
-      - alertname=~".*"
-      continue: true
+    #- receiver: OpsGenie_notifications
+    #  matchers:
+    #  - alertname=~".*"
+    #  continue: true
     - receiver: Telegram
       matchers:
       - alertname=~".*"
