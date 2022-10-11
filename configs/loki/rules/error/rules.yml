@@ -3,7 +3,7 @@ groups:
     rules:
       - alert: Error in logs
         expr: |
-          sum by(message, ip_address, message) (rate({appname="neutrond"} | json | level = "error" [2m]))
+          sum by(message, ip_address, message) (rate({appname="neutrond"} | json | level = `error` | message != `Failed to reconnect to peer. Giving up` | message != `error while stopping connection` | message != `Failed to read request` [2m]))
         for: 1m
         labels:
           severity: critical
