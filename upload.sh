@@ -1,0 +1,1 @@
+scp -r ./build/* sergeyratiashvili@23.109.159.60:/opt/monitoring
