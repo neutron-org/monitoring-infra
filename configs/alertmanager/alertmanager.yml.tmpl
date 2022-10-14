@@ -27,4 +27,5 @@ receivers:
       - send_resolved: false
         api_key: {{ .Env.OPSGENIE_API_KEY }}
         priority: {{`'{{ if .CommonAnnotations.priority }}{{ .CommonAnnotations.priority }}{{ else }}P3{{ end }}'`}}
-
+templates:
+- '/etc/alertmanager/template.txt'
