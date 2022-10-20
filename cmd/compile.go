@@ -24,7 +24,7 @@ func getEnv() Env {
 	return Env{Env: env}
 }
 
-func findAndParseTemplates(rootDir string, funcMap template.FuncMap) (*template.Template, error) {
+func findAndParseTemplates(rootDir string) (*template.Template, error) {
 	cleanRoot := filepath.Clean(rootDir)
 	pfx := len(cleanRoot) + 1
 	root := template.New("")
@@ -67,7 +67,7 @@ var compileCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
-		tmp := template.Must(findAndParseTemplates(TemplatesPath, nil))
+		tmp := template.Must(findAndParseTemplates(TemplatesPath))
 		c := tmp.New("__current").Option("missingkey=error")
 		c, err = c.Parse(string(t))
 		if err != nil {

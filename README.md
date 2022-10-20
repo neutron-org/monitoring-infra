@@ -1,5 +1,5 @@
 # Monitoring infra toolset
-There are places monitoring configs and configs template compiler.
+This is a place for monitoring configs and configs template compiler.
 
 ## Intro
 * All configs are in `configs` folder
