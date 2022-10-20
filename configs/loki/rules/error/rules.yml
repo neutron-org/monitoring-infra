@@ -9,6 +9,6 @@ groups:
           severity: critical
         annotations:
           title: "Error detected in logs"
-          description: "Error detected in logs {{ $labels.ip_address }} {{ $labels.err }} {{ $labels.message }}"
+          description: "{{ $labels.ip_address }} {{ $labels.message }} {{ $labels.error }}"
           priority: P1
           service: neutron-test
