@@ -1,9 +1,9 @@
 groups:
 - name: NeutronStuff
   rules: 
-  - alert: ResMemMoreThan4gb
-    expr: process_resident_memory_bytes{job="neutron"} / 1024 / 1024 > 4000
-    for: 1m
+  - alert: ResMemMoreThan16gb
+    expr: process_resident_memory_bytes{job="neutron"} / 1024 / 1024 > 16000
+    for: 10m
     labels:
       severity: critical
     annotations:
