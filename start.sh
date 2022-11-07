@@ -1,5 +1,13 @@
+args=("$@")
+
+if [ $# != "1" ]
+then
+    echo "Usage: ./start.sh [path_to_env_file]"
+    exit
+fi
+
 set -o allexport
-. ./.env
+. ${args[0]}
 set +o allexport
 
 rm -rf build
