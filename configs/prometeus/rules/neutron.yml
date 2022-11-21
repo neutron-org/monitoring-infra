@@ -11,15 +11,45 @@ groups:
       summary: "Neutron instance {{ $labels.instance }} res memory high"
       description: "{{ $labels.instance }} res memory high: {{ $value }}"
       priority: P1
-  - alert: ResMemPeak
-    expr: process_resident_memory_bytes{job="neutron"}/avg_over_time(process_resident_memory_bytes{job="neutron"}[10m]) > 1.3
+  # - alert: ResMemPeak
+  #   expr: process_resident_memory_bytes{job="neutron"}/avg_over_time(process_resident_memory_bytes{job="neutron"}[10m]) > 1.3
+  #   for: 1m
+  #   labels:
+  #     severity: critical
+  #   annotations:
+  #     service: neutron-test
+  #     summary: "Neutron instance {{ $labels.instance }} res memory peak"
+  #     description: "{{ $labels.instance }} res memory peak: {{ $value }}"
+  #     priority: P1
+  - alert: FaucetRLowBalance
+    expr: balance{address='neutron1jy7lsk5pk38zjfnn6nt6qlaphy9uejn4nrnku6'} < 500
     for: 1m
     labels:
       severity: critical
     annotations:
       service: neutron-test
-      summary: "Neutron instance {{ $labels.instance }} res memory peak"
-      description: "{{ $labels.instance }} res memory peak: {{ $value }}"
+      summary: "Low balance on R Faucet {{ $labels.address }}"
+      description: "{{ $labels.address }} faucet balance low: {{ $value }}"
+      priority: P1
+  - alert: SigningValidatorsLow
+    expr: signing_validators_count/validators_in_set_count*100 < 80
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Signing validators low"
+      description: "Signing validators low: {{ $value }}%"
+      priority: P1
+  - alert: MissedBlocksCount
+    expr: validator_missed_blocks > 300
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      service: neutron-test
+      summary: "Missed blocks count for validator {{ $labels.name }} is high"
+      description: "{{ $labels.name }} ({{ $labels.address }}) Missed blocks count: {{ $value }}"
       priority: P1
   - alert: FewBlocksProduced
     expr: tendermint_consensus_latest_block_height-tendermint_consensus_latest_block_height offset 60s < 10

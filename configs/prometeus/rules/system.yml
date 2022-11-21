@@ -2,7 +2,7 @@ groups:
 - name: SystemStuff
   rules: 
   - alert: NodeSystemOverloaded
-    expr: node_load5 > 5
+    expr: node_load5 > 10
     for: 1m
     labels:
       severity: critical
